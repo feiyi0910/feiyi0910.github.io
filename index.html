@@ -1,222 +1,461 @@
 
-<html>
-    <head>
-        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/image/48.jpg"/> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/font/LEVIBRUSH/LEVIBRUSH.css" media="all">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>❤致我的蕉蕉❤ | Justlovesmile的BLOG</title>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jquery.min.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex.min.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex-parser.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex-jit.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex-builderbase.min.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex-async.min.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/jscex-async-powerpack.min.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/functions.js" type="text/javascript"></script>
-        <script data-pjax src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN@latest/js/love.js" type="text/javascript"></script>
-        <link href="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/love.css" rel="stylesheet" type="text/css" />
-        <script data-pjax>
-            var str;
-            str = "蕉蕉"
-            window.onload = function() {
-                if (str != null && str !="") {
-                    //document.getElementById("ai").innerHTML=str;
-                    var all = document.getElementsByClassName("ai"); //返回的是数组
-                    for (var i = 0; i < all.length; i++) {
-                        all[i].innerHTML = str;
-                    }
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <audio autoplay="autopaly" loop="loop"><source src="/love/qmj/answer.mp3" type="audio/mp3" /></audio>
-        <div class="notfound">
-        <a class="notfound-link" href="/love/">
-            <i class="fa fa-home"></i>
-        </a>
-        <div id="main">
-            <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
-            <div id="wrap">
-                <div id="text">
-                    <div id="code">
-                        <font color="black" size="3"><b><i>
-                        <span class="say">二零二零年到了，在爱你爱你的日子，我想说。</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say"><span class="ai" >对的人 </span>，我们的相遇是意外，但在我看来也是命中注定！</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say"> 就像你告诉我的，70亿人就像70亿颗绿豆放进一个大缸中</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say">两个人就像绿豆堆中的两颗红豆，相遇的概率几乎为0</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say">但就是这样，我们仍得以相遇</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say">更重要的是，恰好又各自喜欢❤！</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say">以前的我不相信一见钟情，直到遇见你！</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say"><span class="ai" >亲爱的 </span>，让我们一直在一起吧！</span><br>
-                        <span class="say"></span><br>
-                        <span class="say">或许我很笨拙，但我对你的心是真的！ </span><br>
-                        <span class="say"> </span><br>
-                        <span class="say"> -- 爱你的小明同学--</span>
-                        </i></b>
-                        </font>
-                    </div>
-                </div>
-                <div id="clock-box">
-                    <span><font color="#666666"><span class="ai" >亲爱的 </span>，我们在一起已经</font></span>
-                    <div id="clock"></div>
-                </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-        </div>
-        <script data-pjax>
-            (function() {
-                var canvas = $('#canvas');
-                if (!canvas[0].getContext) {
-                    $("#error").show();
-                    return false;
-                }
-                var width = canvas.width();
-                var height = canvas.height();
-                canvas.attr("width", width);
-                canvas.attr("height", height);
-                var opts = {
-                    seed: {
-                        x: width / 2 - 20,
-                        color: "rgb(190, 26, 37)",
-                        scale: 2
-                    },
-                    branch: [
-                        [535, 680, 570, 250, 500, 200, 30, 100, [
-                            [540, 500, 455, 417, 340, 400, 13, 100, [
-                                [450, 435, 434, 430, 394, 395, 2, 40]
-                            ]],
-                            [550, 445, 600, 356, 680, 345, 12, 100, [
-                                [578, 400, 648, 409, 661, 426, 3, 80]
-                            ]],
-                            [539, 281, 537, 248, 534, 217, 3, 40],
-                            [546, 397, 413, 247, 328, 244, 9, 80, [
-                                [427, 286, 383, 253, 371, 205, 2, 40],
-                                [498, 345, 435, 315, 395, 330, 4, 60]
-                            ]],
-                            [546, 357, 608, 252, 678, 221, 6, 100, [
-                                [590, 293, 646, 277, 648, 271, 2, 80]
-                            ]]
-                        ]]
-                    ],
-                    bloom: {
-                        num: 700,
-                        width: 1080,
-                        height: 650,
-                    },
-                    footer: {
-                        width: 1200,
-                        height: 5,
-                        speed: 10,
-                    }
-                };
-                var tree = new Tree(canvas[0], width, height, opts);
-                var seed = tree.seed;
-                var foot = tree.footer;
-                var hold = 1;
-                canvas.click(function(e) {
-                    var offset = canvas.offset(),
-                        x, y;
-                    x = e.pageX - offset.left;
-                    y = e.pageY - offset.top;
-                    if (seed.hover(x, y)) {
-                        hold = 0;
-                        canvas.unbind("click");
-                        canvas.unbind("mousemove");
-                        canvas.removeClass('hand');
-                    }
-                }).mousemove(function(e) {
-                    var offset = canvas.offset(),
-                        x, y;
-                    x = e.pageX - offset.left;
-                    y = e.pageY - offset.top;
-                    canvas.toggleClass('hand', seed.hover(x, y));
-                });
-                var seedAnimate = eval(Jscex.compile("async", function() {
-                    seed.draw();
-                    while (hold) {
-                        $await(Jscex.Async.sleep(10));
-                    }
-                    while (seed.canScale()) {
-                        seed.scale(0.95);
-                        $await(Jscex.Async.sleep(10));
-                    }
-                    while (seed.canMove()) {
-                        seed.move(0, 2);
-                        foot.draw();
-                        $await(Jscex.Async.sleep(10));
-                    }
-                }));
-                var growAnimate = eval(Jscex.compile("async", function() {
-                    do {
-                        tree.grow();
-                        $await(Jscex.Async.sleep(10));
-                    }
-                    while (tree.canGrow());
-                }));
-                var flowAnimate = eval(Jscex.compile("async", function() {
-                    do {
-                        tree.flower(2);
-                        $await(Jscex.Async.sleep(10));
-                    }
-                    while (tree.canFlower());
-                }));
-                var moveAnimate = eval(Jscex.compile("async", function() {
-                    tree.snapshot("p1", 240, 0, 610, 680);
-                    while (tree.move("p1", 500, 0)) {
-                        foot.draw();
-                        $await(Jscex.Async.sleep(10));
-                    }
-                    foot.draw();
-                    tree.snapshot("p2", 500, 0, 610, 680);
-                    canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-                    canvas.css("background", "#ffe");
-                    $await(Jscex.Async.sleep(300));
-                    canvas.css("background", "none");
-                }));
-                var jumpAnimate = eval(Jscex.compile("async", function() {
-                    var ctx = tree.ctx;
-                    while (true) {
-                        tree.ctx.clearRect(0, 0, width, height);
-                        tree.jump();
-                        foot.draw();
-                        $await(Jscex.Async.sleep(25));
-                    }
-                }));
-                var textAnimate = eval(Jscex.compile("async", function() {
-                    var together = new Date();
-                    together.setFullYear(2019, (12 - 1), (2 - 1));
-                    together.setHours(0);
-                    together.setMinutes(15);
-                    together.setSeconds(0);
-                    together.setMilliseconds(0);
-                    $("#code").show().typewriter();
-                    $("#clock-box").fadeIn(500);
-                    while (true) {
-                        timeElapse(together);
-                        $await(Jscex.Async.sleep(1000));
-                    }
-                }));
-                var runAsync = eval(Jscex.compile("async", function() {
-                    $await(seedAnimate());
-                    $await(growAnimate());
-                    $await(flowAnimate());
-                    $await(moveAnimate());
-                    textAnimate().start();
-                    $await(jumpAnimate());
-                }));
-                runAsync().start();
-            })();
-        </script>
-    <link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
-    </body>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>非衣0910 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Ka8qSMgwsT4osI9kJF8sPSBtkv-Cpe_tMgq79d4xdmQ" />
+    
 
+    
+        
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/feiyi-p/custom.css?v=WswrKtcjX1NoFN2WolV&#x2B;TFMD/n8=" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/css/mobile-common.min.css?v=ZBWq3OPQpKdP7jvC_UMCkC1a79tQGcXLPZwlftZaLVg" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/feiyi-p/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/feiyi-p/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/feiyi-p/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 663709;
+        var currentBlogApp = 'feiyi-p';
+        var isLogined = true;
+        var isBlogOwner = true;
+        var skinName = 'Custom';
+        var visitorUserId = '709365c2-12a2-4ebe-1c27-08d8c8014cc2';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function () { return ''; } });
+            }
+        } catch (error) { }
+        window.cb_enable_mathjax = false;
+        window.mathEngine = 0;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = false;
+        window.enableMacStyleCodeBlock = false
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="https://www-cdn.cnblogs.com/js/blog-common.min.js?v=LpTSrHPywOojaVPoJnDVXroO3vyHM9s3z0N9kzgmHPI"></script>
+    
+
+    
+</head>
+<body class="skin-custom no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="//common.cnblogs.com/logo.svg" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a>
+                </li>
+                <li>
+                    <a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a>
+                </li>                
+                <li>
+                    <a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a>
+                </li>
+                <li><a href="https://home.cnblogs.com/vip">会员</a></li>
+                    <li><a href="https://www.cnblogs.com/cmt/p/17536328.html">直播</a></li>
+                <li>
+                    <a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a>
+                </li>
+                <li>
+                    <a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a>
+                </li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search dropdown" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" autocomplete="off" />
+                        <button id="zzk_search_button" onclick="window.navbarSearchManager.triggerActiveOption()">
+                            <img id="search_icon" class="focus-hidden" src="//common.cnblogs.com/images/blog/search.svg" alt="搜索" />
+                            <img class="hidden focus-visible" src="/images/enter.svg" alt="搜索" />
+                        </button>
+                        <ul id="navbar_search_options" class="dropdown-menu quick-search-menu">
+                            <li tabindex="0" class="active" onclick="zzkSearch(event, document.getElementById('zzk_search_input').value)">
+                                <div class="keyword-wrapper">
+                                    <img src="//common.cnblogs.com/images/blog/search.svg" alt="搜索" />
+                                    <div class="keyword"></div>
+                                </div>
+                                <span class="search-area">所有博客</span>
+                            </li>
+                                    <li tabindex="2" onclick="zzkBlogSearch(event, 'feiyi-p', document.getElementById('zzk_search_input').value)">
+                                        <div class="keyword-wrapper">
+                                            <img src="//common.cnblogs.com/images/blog/search.svg" alt="搜索" />
+                                            <div class="keyword"></div>
+                                        </div>
+                                        <span class="search-area">我的博客</span>
+                                    </li>
+                        </ul>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="//common.cnblogs.com/images/blog/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="//common.cnblogs.com/images/blog/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="//common.cnblogs.com/images/blog/message.svg" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="//common.cnblogs.com/images/blog/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="//common.cnblogs.com/images/blog/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/feiyi-p/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/feiyi-p/">非衣0910</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/feiyi-p/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%9D%9E%E8%A1%A30910">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/feiyi-p/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_16088914">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/feiyi-p/archive/2022/04/01.html">2022年4月1日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/feiyi-p/p/16088914.html">
+    <span>
+        Markdown
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16088914">
+摘要：            <img src="https://img2023.cnblogs.com/blog/2299195/202306/2299195-20230612221952604-428466870.png" alt="Markdown" class="desc_img" />
+Markdown常见语法        <a href="https://www.cnblogs.com/feiyi-p/p/16088914.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-01 20:41
+非衣0910
+<span data-post-id="16088914" class="post-view-count">阅读(13)</span> 
+<span data-post-id="16088914" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16088914" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16088914" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_14377369">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/feiyi-p/archive/2021/02/05.html">2021年2月5日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/feiyi-p/p/14377369.html">
+    <span>
+        Hello World
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14377369">
+摘要：            
+Hello World 随便建一个文件夹放代码 建一个新Java文件 Hello.java 编辑代码 public class Hello{ public static viod mian(String[]args){ System.out.print(&quot;Hello,World!&quot;); } } 注意        <a href="https://www.cnblogs.com/feiyi-p/p/14377369.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-02-05 14:03
+非衣0910
+<span data-post-id="14377369" class="post-view-count">阅读(34)</span> 
+<span data-post-id="14377369" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14377369" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14377369" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_14372212">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/feiyi-p/archive/2021/02/04.html">2021年2月4日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/feiyi-p/p/14372819.html">
+    <span>
+        day01 基本dos命令
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14372819">
+摘要：            
+基本dos命令 打开cmd方法 菜单-windows系统-命令提示符 win+R cmd回车 在任意文件夹按shift键+鼠标右键-在此处打开powershell窗口 在任意目录前输入cmd回车 常用命令 #盘符切换 盘符+: #查看本盘或本文件夹下所有文件 dir directory #切换目录         <a href="https://www.cnblogs.com/feiyi-p/p/14372819.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-02-04 15:24
+非衣0910
+<span data-post-id="14372819" class="post-view-count">阅读(43)</span> 
+<span data-post-id="14372819" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14372819" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14372819" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/feiyi-p/p/14372212.html">
+    <span>
+        day01
+    </span>
+        <img src="/images/visibility_off.svg" class="text-tail-icon" title="仅自己可见" alt="仅自己可见" />
+
+
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14372212">
+摘要：            
+标题 二级标题 三级标题 四级标题 字体 你好！ 你好！ 你好！ 你好！ 引用 (英-大于号-小括号) 成功是失败之母 。 分割线 (三个减号或者三个*) 图片 (英-感叹号+中括号+小括号) 超链接 (英-中括号+小括号) 哔哩哔哩 列表 有序 (数字+点) B C A 无序 (减号+空格) 一         <a href="https://www.cnblogs.com/feiyi-p/p/14372212.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-02-04 13:50
+非衣0910
+<span data-post-id="14372212" class="post-view-count">阅读(0)</span> 
+<span data-post-id="14372212" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14372212" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14372212" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+    <h3 class="catListTitle">公告</h3>
+<div id="blog-news">    
+    <div id="sidebar_news_content">
+    </div>
+</div>
+<script>loadBlogNews();</script>
+
+ 
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2023 非衣0910
+<br /><span id="poweredby">Powered by .NET 7.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+    <div id="page_end_html">
+        <!--live2d-->
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/autoload.js"></script>
+<!--live2dend-->
+
+<!--放大图片-->
+<link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/zouwangblog/zoom.css">
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/zoom.js"></script>
+<script type='text/javascript'>$('#cnblogs_post_body img').attr('data-action', 'zoom');</script>
+<!--放大图片end-->
+
+<!--鼠标特效-->
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/mouse-click.js"></script>
+<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+<!--鼠标特效 end-->
+
+
+<!-- Music-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/APlayer.min.js"></script>
+<script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+<div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="2878443703" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="orange"></div>
+<!-- Music end -->
+
+
+<!--雪花特效1&12月自动添加-->
+
+<div class="Snow">
+    <canvas id="Snow"></canvas>
+</div>
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/xue.js"></script>
+
+
+<!--顶部加载条-->
+<link rel="stylesheet" href="https://blog-static.cnblogs.com/files/zouwangblog/nprogress.css">
+<script src="https://blog-static.cnblogs.com/files/feiyi-p/main.js?t=1686278966&download=true"></script>
+<script>
+NProgress.start();
+NProgress.done();
+</script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8DuWIYDefEVJtUW7VadsHY_9Bdi6Te9nB7Bnl6D1CQhWIGLanZIzUhecopZC9Hgok_n4kBPv07T4tCW9E-hKh-1VmWbDqr3Bk2NQljAWkMSt4-BOz5WEf1oIVII-TbT3sjy0o4o6Qt0uAF_Ddv8SyAimM8sQBOJlUemXRZmo3LcD_EnMoSM0mfu4SHtt3Hvccg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M95P3TTWJZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M95P3TTWJZ');
+</script>
+</body>
 </html>
